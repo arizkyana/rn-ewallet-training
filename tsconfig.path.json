@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@containers/*": [
+        "./src/containers/*"
+      ],
+      "@helpers/*": [
+        "./src/helpers/*"
+      ],
+      "@libraries/*": [
+        "./src/libraries/*"
+      ],
+      "@interfaces/*": [
+        "./src/interfaces/*"
+      ],
+      
+    }
+    
+  }
+}
