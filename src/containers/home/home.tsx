@@ -3,7 +3,7 @@ import { HomeStyled } from './home.styled';
 
 import Typography from '@components/Typography';
 import Input from '@components/Input';
-// import Button from '@components/Button';
+import Button from '@components/Button';
 
 import { Formik, FormikHandlers } from 'formik';
 import * as Yup from 'yup';
@@ -41,13 +41,13 @@ function HomeContainer() {
             onChange={handleChange('password')}
             onBlur={handleBlur('password')}
           />
-          {/* <Button
+          <Button
             title="login"
             children="Login"
             onPress={() => {
               console.log('test');
             }}
-          /> */}
+          />
         </HomeStyled>
       )}
     </Formik>
