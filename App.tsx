@@ -1,10 +1,8 @@
 import React from 'react';
-
-// pages
-import MainPage from '@pages/MainPage';
+import Core from '@libraries/core';
 
 function App() {
-  return <MainPage />;
+  return <Core />;
 }
 
 export default App;

@@ -1,14 +1,17 @@
 import React, { PropsWithChildren } from 'react';
 import { TypoStyled, TypoText } from './typo.styled';
 
-interface IPropsTypo {
-  variant?: string;
+export type TVariant = 'title' | 'subTitle' | 'body' | 'caption';
+export type TColor = 'white' | 'primary' | 'secondary' | 'alert';
+export interface IPropsTypo {
+  variant?: TVariant;
+  color?: TColor;
 }
 
-function TypoComponent({ children }: PropsWithChildren<IPropsTypo>) {
+function TypoComponent(props: PropsWithChildren<IPropsTypo>) {
   return (
     <TypoStyled>
-      <TypoText children={children} />
+      <TypoText {...props} />
     </TypoStyled>
   );
 }

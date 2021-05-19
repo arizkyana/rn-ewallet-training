@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 
-import { ButtonStyled } from './button.styled';
+import { ButtonStyled, ButtonText, ButtonView } from './button.styled';
 
 interface IButton {
   variant?: string;
@@ -9,7 +9,13 @@ interface IButton {
 }
 
 function ButtonComponent(props: PropsWithChildren<IButton>) {
-  return <ButtonStyled {...props} />;
+  return (
+    <ButtonView>
+      <ButtonStyled onPress={props.onPress}>
+        <ButtonText children={props.title} />
+      </ButtonStyled>
+    </ButtonView>
+  );
 }
 
 export default ButtonComponent;

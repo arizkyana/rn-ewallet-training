@@ -1,8 +1,8 @@
 import React from 'react';
 import HomeContainer from '@containers/home';
 
-function MainPage() {
+function HomeScreen() {
   return <HomeContainer />;
 }
 
-export default MainPage;
+export default HomeScreen;

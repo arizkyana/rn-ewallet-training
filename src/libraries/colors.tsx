@@ -1,5 +1,6 @@
 export default {
   PRIMARY: {
-    MAIN: '#114e60',
+    MAIN: '#325288',
+    SECONDARY: '#114e60',
   },
 };
