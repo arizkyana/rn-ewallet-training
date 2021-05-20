@@ -9,6 +9,7 @@ import Typography from '@components/Typography';
 import CurrentBalance from './libraries/current-balance';
 import ActionsGroup from './libraries/actions-group';
 import LastTransaction from './libraries/last-transaction';
+import Profile from './libraries/profile';
 
 function HomeContainer() {
   const navigation = useNavigation();
@@ -16,6 +17,7 @@ function HomeContainer() {
   return (
     <SafeAreaView>
       <HomeStyled>
+        <Profile />
         <CurrentBalance />
         <ActionsGroup />
         <LastTransaction />

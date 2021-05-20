@@ -1,13 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { View, Text, Alert } from 'react-native';
-import { useNavigation } from '@react-navigation/core';
+import { Alert } from 'react-native';
 import { HomeStyled } from './login.styled';
 
 import Typography from '@components/Typography';
 import Input from '@components/Input';
 import Button from '@components/Button';
 
-import { Formik, FormikHandlers, FormikHelpers, FormikProps, useFormikContext } from 'formik';
+import { Formik, FormikHandlers, FormikProps } from 'formik';
 import * as Yup from 'yup';
 
 import { callAPI } from '@helpers/networking';
@@ -63,6 +62,7 @@ function HomeContainer() {
         handleSubmit,
         values,
         errors,
+        touched,
       }: FormikHandlers & FormikProps<IInitialValues>) => (
         <HomeStyled>
           <Typography children="DompetKu" variant="title" />
@@ -71,8 +71,8 @@ function HomeContainer() {
             onChangeText={handleChange('email')}
             onBlur={handleBlur('email')}
             value={values.email}
-            helperText={errors.email}
-            error={Boolean(errors.email)}
+            helperText={touched.email && errors.email}
+            error={Boolean(touched.email) && Boolean(errors.email)}
           />
           <Input
             secureTextEntry
@@ -80,8 +80,8 @@ function HomeContainer() {
             onChangeText={handleChange('password')}
             onBlur={handleBlur('password')}
             value={values.password}
-            helperText={errors.password}
-            error={Boolean(errors.password)}
+            helperText={touched.password && errors.password}
+            error={Boolean(touched.password) && Boolean(errors.password)}
           />
           <Button
             title="login"

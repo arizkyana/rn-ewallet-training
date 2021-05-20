@@ -6,7 +6,7 @@ interface IInputProps {
   onBlur?: (e: any) => void;
   secureTextEntry?: boolean;
   value?: any;
-  helperText?: string;
+  helperText?: string | boolean;
   error?: boolean;
 }
 

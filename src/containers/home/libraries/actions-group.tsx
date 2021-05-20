@@ -4,18 +4,24 @@ import React from 'react';
 import { Text } from 'react-native';
 import { ActionGroupStyled, ActionGroupItem } from '../home.styled';
 
+import { Transfer, Pay, TopUp } from '@components/Icons';
+import Typography from '@components/Typography';
+
 function ActionsGroup() {
   const navigation = useNavigation();
   return (
     <ActionGroupStyled>
-      <ActionGroupItem>
-        <Text>Transfer</Text>
+      <ActionGroupItem disabled>
+        <Transfer />
+        <Typography children="Transfer" />
       </ActionGroupItem>
-      <ActionGroupItem>
-        <Text>Bayar</Text>
+      <ActionGroupItem disabled>
+        <Pay />
+        <Typography children="Bayar" />
       </ActionGroupItem>
       <ActionGroupItem onPress={() => navigation.navigate('Top Up Wallet')}>
-        <Text>Top Up</Text>
+        <TopUp />
+        <Typography children="Top Up" />
       </ActionGroupItem>
     </ActionGroupStyled>
   );

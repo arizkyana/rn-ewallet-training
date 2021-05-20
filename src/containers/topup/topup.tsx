@@ -57,16 +57,18 @@ function TopUpContainer() {
             handleSubmit,
             values,
             errors,
+            touched,
+            isValid,
           }: FormikHandlers & FormikProps<ITopup>) => (
             <>
               <EnterAmount
                 onChangeText={handleChange('amount')}
                 onBlur={handleBlur('amount')}
                 value={values.amount}
-                helperText={errors.amount}
-                error={Boolean(errors.amount)}
+                helperText={touched.amount && errors.amount}
+                error={Boolean(touched.amount) && Boolean(errors.amount)}
               />
-              <ProceedButton onPress={handleSubmit} />
+              <ProceedButton onPress={handleSubmit} disabled={!isValid} />
             </>
           )}
         </Formik>

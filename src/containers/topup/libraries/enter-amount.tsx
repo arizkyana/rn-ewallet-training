@@ -10,7 +10,7 @@ interface IEnterAmount {
   onChangeText: (e: any) => void;
   onBlur: (e: any) => void;
   value: any;
-  helperText?: string;
+  helperText?: string | boolean;
   error?: boolean;
 }
 

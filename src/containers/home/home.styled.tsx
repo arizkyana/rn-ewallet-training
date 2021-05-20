@@ -19,7 +19,7 @@ export const ScrollStyled = Styled.ScrollView({
 export const CurrentBalanceStyled = Styled.View({
   padding: 40,
   borderRadius: 10,
-  backgroundColor: COLORS.PRIMARY.MAIN,
+  backgroundColor: COLORS.PRIMARY.ORANGE,
   width: '100%',
 });
 
@@ -33,16 +33,20 @@ export const ActionGroupStyled = Styled.View({
   marginBottom: 30,
 });
 
-export const ActionGroupItem = Styled.TouchableHighlight({
-  width: '30%',
-  borderRadius: 15,
-  height: 100,
-  alignItems: 'center',
-  alignContent: 'center',
-  borderWidth: 1,
-  display: 'flex',
-  justifyContent: 'center',
-});
+export const ActionGroupItem = Styled.TouchableOpacity(
+  (props: { disabled?: boolean }) => ({
+    width: '30%',
+    borderRadius: 15,
+    height: 100,
+    alignItems: 'center',
+    alignContent: 'center',
+    borderWidth: 1,
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: props.disabled ? COLORS.PRIMARY.DISABLED : 'white',
+    borderColor: COLORS.PRIMARY.MAIN,
+  }),
+);
 
 export const LastTransactionStyled = Styled.View({
   width: '100%',
@@ -64,4 +68,25 @@ export const LastTransactionItem = Styled.TouchableHighlight({
   borderRadius: 8,
   paddingLeft: 10,
   borderColor: COLORS.PRIMARY.SECONDARY,
+});
+
+export const ProfileSection = Styled.View({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',
+  height: 100,
+  width: '100%',
+  overflow: 'hidden',
+  flexDirection: 'row',
+});
+
+export const ProfilePicture = Styled.Image({
+  borderRadius: 100,
+  width: 70,
+  height: 70,
+});
+
+export const ProfileInfo = Styled.View({
+  flex: 1,
+  paddingLeft: 10,
 });

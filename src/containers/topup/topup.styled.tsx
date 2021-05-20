@@ -28,12 +28,17 @@ export const EnterAmountInput = Styled.TextInput({
   color: COLORS.PRIMARY.SECONDARY,
 });
 
-export const ProceedButtonStyled = Styled.TouchableHighlight({
-  backgroundColor: COLORS.PRIMARY.MAIN,
-  padding: 20,
-  width: '100%',
-  alignItems: 'center',
-});
+export const ProceedButtonStyled = Styled.TouchableHighlight(
+  (props: { disabled?: boolean }) => ({
+    backgroundColor: props.disabled
+      ? COLORS.PRIMARY.DISABLED
+      : COLORS.PRIMARY.MAIN,
+    padding: 20,
+    width: '100%',
+    alignItems: 'center',
+    borderRadius: 10,
+  }),
+);
 
 export const PaymentMethodStyled = Styled.View({
   flex: 1,
